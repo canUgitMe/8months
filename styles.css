@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+body {
+    background-color: #f8c8dc; /* Soft pink */
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #6a5acd; /* Soft blueish color */
+}
+
+button {
+    font-family: 'Sacramento', cursive;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#receive {
+    background: #ff66b2;
+    color: white;
+    box-shadow: 3px 3px 10px rgba(255, 102, 178, 0.5);
+}
+
+#receive:hover {
+    background: #ff3385;
+}
+
+#dont-receive {
+    background: #87CEFA;
+    color: white;
+    position: absolute;
+    transition: transform 2s ease-in-out, left 2s ease-in-out, top 2s ease-in-out;
+    max-width: 100px;
+    box-shadow: 3px 3px 10px rgba(135, 206, 250, 0.5);
+}
+
+#dont-receive:hover {
+    background: #4682B4;
+}
+
+/* Flexbox to ensure poem and picture are side by side */
+.poem-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Wrap to new line on smaller screens */
+}
+
+/* Poem styling */
+.poem {
+    font-family: 'Sacramento', cursive;
+    font-size: 24px;
+    color: black;
+    max-width: 50%;
+    text-align: left;
+}
+
+/* User Image beside the poem */
+.user-photo {
+    width: 40%;
+    max-width: 250px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Center the caption under the poem */
+.caption {
+    font-size: 22px;
+    color: #6a5acd;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    .poem-container {
+        flex-direction: column; /* Stack image and poem in mobile */
+        align-items: center;
+    }
+
+    .poem {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .user-photo {
+        width: 70%;
+        max-width: 200px;
+    }
+}
+
+/* Butterflies Animation */
+.popup-butterfly, .poem-butterfly {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    animation: flyAround 5s linear infinite;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+@keyframes flyAround {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(20deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
