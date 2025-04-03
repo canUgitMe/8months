@@ -4,7 +4,7 @@ body {
     background-color: #f8c8dc; /* Soft pink */
     font-family: 'Sacramento', cursive;
     text-align: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .popup {
